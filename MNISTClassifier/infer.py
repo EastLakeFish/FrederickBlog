@@ -6,7 +6,7 @@ from model import MNISTClassifier
 import tkinter as tk
 
 model = MNISTClassifier()
-model.load_state_dict(torch.load('bin/mnist_classifier.pth'))
+model.load_state_dict(torch.load('checkpoints/mnist_classifier.pth'))
 model.eval()
 
 transform = transforms.Compose([

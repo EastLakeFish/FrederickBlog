@@ -8,6 +8,7 @@ model = MNISTClassifier()
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 
+
 def test(model, test_loader):
     model.eval()
     correct = 0
@@ -39,6 +40,6 @@ def train(model, train_loader, criterion, optimizer, epochs):
 
 
 if __name__ == '__main__':
-    makedirs('bin', exist_ok=True)
+    makedirs('checkpoints', exist_ok=True)
     train(model, train_loader, criterion, optimizer, epochs=20)
-    torch.save(model.state_dict(), 'bin/mnist_classifier.pth')
+    torch.save(model.state_dict(), 'checkpoints/mnist_classifier.pth')
