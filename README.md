@@ -1,7 +1,7 @@
 # Frederick's Blog
 
 <p align="left">
-  <img src="assets/logo.png" alt="Frederick's Blog Logo" width="200"/>
+  <img src="Assets/logo.png" alt="Frederick's Blog Logo" width="200"/>
 </p>
 
 This is the repository for my personal blog on Docker, containerization, and modern research tooling.  
