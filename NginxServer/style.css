@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  text-align: center;
+}
+
+header {
+  background-color: #222;
+  color: #fff;
+  padding: 2em 1em;
+}
+
+header h1 {
+  margin: 0 0 0.2em;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2em;
+  gap: 1.5em;
+}
+
+.photo {
+  background-color: white;
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.photo figcaption {
+  padding: 0.5em 0.8em;
+  font-size: 0.95em;
+  color: #666;
+  background-color: #f2f2f2;
+  border-top: 1px solid #ddd;
+}
+
+footer {
+  padding: 1.5em;
+  font-size: 0.85em;
+  color: #999;
+}
