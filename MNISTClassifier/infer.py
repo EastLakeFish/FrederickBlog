@@ -1,9 +1,8 @@
 import torch
 from pathlib import Path
 from torchvision import transforms
-from PIL import Image, ImageTk
+from PIL import Image
 from model import MNISTClassifier
-import tkinter as tk
 
 model = MNISTClassifier()
 model.load_state_dict(torch.load('checkpoints/mnist_classifier.pth'))
@@ -28,19 +27,7 @@ def load_and_predict(image_path):
 
 def display_image_and_label(image_path, true_label):
     image, predicted_label = load_and_predict(image_path)
-
-    root = tk.Tk()
-    root.title("Inference")
-
-    image_tk = ImageTk.PhotoImage(image)
-
-    img_label = tk.Label(root, image=image_tk)
-    img_label.pack()
-
-    result_label = tk.Label(root, text=f"True Label: {true_label}\nPredicted Label: {predicted_label}")
-    result_label.pack()
-
-    root.mainloop()
+    print(f"True Label: {true_label}\nPredicted Label: {predicted_label}")
 
 
 image_path = Path('assets/1_3.png')
