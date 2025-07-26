@@ -20,8 +20,8 @@ def init_model() -> nn.Module:
     return YOLO(model_path)
 
 
-def infer(image_path: Path, model: nn.Module, threshold: float = 0.5) -> list:
-    preds, results = model(image_path)[0], []
+def infer(image: Path or Image, model: nn.Module, threshold: float = 0.5) -> list:
+    preds, results = model(image)[0], []
     boxes, names = preds.boxes, model.names
     for i in range(len(boxes)):
         conf = boxes.conf[i]
@@ -35,8 +35,12 @@ def infer(image_path: Path, model: nn.Module, threshold: float = 0.5) -> list:
     return results
 
 
-def draw_detections(image_path: Path, detections: list, save: bool = False) -> Image:
-    image = Image.open(image_path).convert("RGB")
+def draw_detections(image: Path or Image, detections: list, save: bool = False) -> Image:
+    if not isinstance(image, Image.Image):
+        image_path = image
+        image = Image.open(image).convert("RGB")
+    else:
+        image_path = 'Uploads/sample.jpg'
     draw = ImageDraw.Draw(image)
 
     try:

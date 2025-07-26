@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>DetectionServer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>目标检测模型</h2>
+
+  <input type="file" id="fileInput" accept="image/*" />
+  <button onclick="uploadImage()">上传图像并检测</button>
+
+  <h3>检测结果</h3>
+  <pre id="resultText">（此处显示识别结果）</pre>
+
+  <h3>处理后图像</h3>
+  <img id="resultImage" style="max-width: 500px;" alt="processed image"/>
+
+  <script src="script.js"></script>
+</body>
+</html>
